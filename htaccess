@@ -1,0 +1,21 @@
+Options Indexes +FollowSymLinks MultiViews
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{QUERY_STRING} ^([^&=]+)=?([^&]*)&([^&=]+)=?([^&]*)&?(.*)
+#RewriteRule ^bytickets\.bms$ http://in.bookmyshow.local/bytickets/%1 [R=301,L]
+
+#RewriteEngine on
+#RewriteBase /
+#RewriteCond %{REQUEST_URI} !bytickets.bms$
+#RewriteRule ^bytickets\.bms/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+) /bytickets.bms?key=$1&srid=$2&eid=$3&did=$4&ety=$5
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}\.bms -f
+#RewriteRule ^([^/]+)/$ $1.bms 
+
+# Forces a trailing slash to be added
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+#RewriteRule (.*)$ /$1/ [L,QSA]
