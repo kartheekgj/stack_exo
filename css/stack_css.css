@@ -1,0 +1,18 @@
+#but_old_ldng,#but_new_ldng{
+		display:none;
+	
+}
+ul li{
+	list-style: none outside none;	
+}
+.ul_buttons li{
+		margin-bottom : 10px;
+
+}
+button{
+		background-color: #E6E6E6;
+		border: 0 none rgba(0, 0, 0, 0);
+		border-radius: 2px;
+		color: rgba(0, 0, 0, 0.8);
+}
+		
